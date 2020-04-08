@@ -1,0 +1,187 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\usepackage[normalem]{ulem}
+\usepackage{enumerate}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+\usepackage{graphicx}
+%\RequirePackage{tikz, pgflibraryplotmarks}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Notice that this exam was remote! Don't
+% use this for future templates!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{Class}
+\newcommand{\term}{Term}
+\newcommand{\examnum}{Exam Number}
+\newcommand{\examdate}{Date}
+\newcommand{\timelimit}{Time Limit}
+%\newcommand{\p}[1]
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+% trying grey boxes
+\usepackage{color}
+\definecolor{lightgray}{gray}{0.75}
+
+\newcommand\greybox[1]{%
+  \vskip\baselineskip%
+  \par\noindent\colorbox{lightgray}{%
+    \begin{minipage}{0.8\textwidth}\centering #1 \end{minipage}%
+  }%
+  \vskip\baselineskip%
+}
+
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{2.8in} r l}
+\textbf{\class} & \textbf{Name (Print):} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+\begin{minipage}{0.5\textwidth}
+  \begin{center}
+    \uline{Vectors}
+  \end{center}
+  \[\vec{r}=r_x\hat{x}+r_y\hat{y}\]
+  \[\vec{u}\cdot\vec{v}=uv\cos\theta=u_xv_x+u_yv_y\]
+  \[\vec{u}\times\vec{v}=(u_yv_z-u_zv_y)\hat{x}-(u_xv_z-u_zv_x)\hat{y}+(u_xv_y-u_yv_x)\hat{z}\]
+  \[|\vec{u}\times \vec{v}|=uv\sin\phi\]
+\begin{center}
+    \uline{Basic Definitions}
+\end{center}
+\[\vec{v}_{ave}=\frac{\Delta \vec{r}}{\Delta t},\qquad \vec{v}=\frac{d\vec{r}}{dt}\]
+\[\vec{a}_{ave}=\frac{\Delta \vec{v}}{\Delta t},\qquad \vec{a}=\frac{d\vec{v}}{dt}\]
+\[\omega_{ave}=\frac{\Delta \theta}{\Delta t},\qquad \omega=\frac{d\theta}{dt}.\]
+\[v=r\omega,\qquad v_{cm}=R\omega\]
+\begin{center}\uline{Energy and Interactions}\end{center}
+\[K_{CM}=\frac{1}{2}mv^2,\qquad E=K+U\]
+\[K_{rot}=\frac{1}{2}I\omega^2\]
+\[\Delta E=0\qquad\qquad\text{(isolated)}\]
+\[U_g=mgz,\quad U_G=-G\frac{m_1m_2}{r}\tag*{(Gravity)}\]
+\[U_s=\frac{1}{2}k(r-r_0)^2\text{ or }U_s=\frac{1}{2}kx^2\tag*{(Spring)}\]
+\[F_x=-\frac{dU}{dx}\tag*{(Force F)}\]
+\[\Delta K=\vec{F}_A\cdot\Delta \vec{r}+\vec{F}_B\cdot \Delta \vec{r}+...\]
+\[W=\vec{F}_A\cdot\Delta\vec{r}+\vec{F}_B\cdot\Delta\vec{r}+...\]
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{center}\uline{Momentum and Impulse}\end{center}
+\[\vec{p}=m\vec{v}\]
+\[\Delta \vec{p}=\vec{I}=[\Delta\vec{p}]_A+[\Delta\vec{p}]_B+...\]
+\[\Delta \vec{p}=0\qquad\qquad\quad~~\text{(isolated)}\]
+\[\vec{r}_{CM}=\frac{m_1\vec{r}_1+m_2\vec{r}_2+...+m_N\vec{r}_N}{m_1+m_2+...+m_n}\]
+\[\vec{L}=\vec{r}\times \vec{p},~~~ \text{ or   }~~~ \vec{L}=I\vec{\omega}\]
+\[\Delta \vec{L}=0\qquad\qquad\quad~~\text{(isolated)}\]
+\begin{center}\uline{Forces and Torques}\end{center}
+\[\vec{F}_A=\frac{[d\vec{p}]_A}{dt},\qquad \vec{F}_g=m\vec{g}.\]
+\[\vec{\tau}_A=\frac{[d\vec{L}]_A}{dt},\qquad \vec{\tau}=\vec{r}\times \vec{F}\]
+\end{minipage}
+\newpage
+
+
+
+Instructions:\\
+
+\begin{minipage}[t]{3.7in}
+\vspace{0pt}
+\begin{itemize}
+\item Do this.
+
+\item Don't do that.
+  
+\item \textit{Show all your work!} 
+
+
+
+\item \textit{Solution Methods:} I will state in the problem if I want you to use a specific solution method - \textit{i.e.} kinematics or energy conservation. If you solve a problem correctly without using the requested method, you will receive partial credit but \textit{not} full credit. But using the alternate method to \textit{check} your answers is highly encouraged!
+
+\item Please put \fbox{a box} around your final answer so I can easily see it. Units \textit{must} be included in final answers. I don't care about sig figs unless the problem specifically states that I do.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{2.3in}
+\vspace{0pt}
+%\cellwidth{3em}
+\gradetablestretch{2}
+\vqword{Problem}
+\addpoints % required here by exam.cls, even though questions haven't started yet.	
+\gradetable[v]%[pages]  % Use [pages] to have grading table by page instead of question
+
+\end{minipage}
+
+\newpage % End of cover pages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#ExamCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+\addpoints
+\question[16] \textbf{Quick Calculations}
+\noaddpoints
+\begin{parts}
+  \part[4] A bird with a mass \Pa kg is traveling with a speed \Pb m/s. How much kinetic energy does it have?
+  
+\vfill
+\part[4] Another problem!
+\vfill
+
+
+
+\end{parts}
+\newpage
+\begin{figure}\begin{center}
+    %\includegraphics[scale=0.25]{Rocketexplosion_clean}
+    \end{center}\end{figure}
+\addpoints
+\question[12] A spaceship traveling at a speed of \Pc m/s crashes into a stationary asteroid of radius \Pd km. Does anyone care?
+
+
+  \vfill
+  \newpage
+  
+
+
+\end{questions}
+\end{document}

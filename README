@@ -1,0 +1,66 @@
+This here code will output a script that will generate a
+bunch of randomized exams.
+
+##########################################################################
+
+Written by by Christopher L Duston <christopher.duston@protonmail.com>
+All rights reserved.
+
+Redistribution and use of this software, with or without modification, is
+permitted provided that the following conditions are met:
+
+1. Redistributions of this script must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO
+ EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+########################################################################
+
+Instructions:
+
+Too lazy for a makefile, compile with
+
+gcc -o ExamRand ExamRand.c -lm -lgsl -lgslcblas
+
+(yes, it does require GSL for the random number generation)
+
+TEXFILE INSTRUCTIONS
+This has only been tested with Philip Hirschorn's exam.cls class:
+http://www-math.mit.edu/~psh/#ExamCls
+ 
+In the tex file, write \Pa, \Pb, \Pc for the random variables.
+In the parameter file, write max min steps for each of those variables.
+The "steps" does nothing right now; maybe later it will be used 
+for something.
+
+Invoke with something like
+
+./ExamRand example_param_file 5 1
+
+(5 exams, some debugging messages)
+
+Make the script executable with something like
+
+chmod u+x Example_Exam_Script
+
+and then run it:
+
+./Example_Exam_Script
+
+(Might want to do that twice, since we are dealing with LaTeX
+and points for each problem need to be updated)
+
+Check the results
+
+evince Example_Exam-*.pdf
+
+(or your favorite pdf reader).
